@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <article
+        class="profile-card"
+        data-testid="test-profile-card"
+        aria-label="Profile card"
+      >
+        <header>
+          <h1 data-testid="test-user-name">Ambrose Ojimba</h1>
+        </header>
+
+        <div data-testid="test-user-header-flex">
+          <figure>
+            <img
+              src="assets/images/dy.jpg"
+              alt="Ambrose portrait"
+              data-testid="test-user-avatar"
+            />
+
+            <input type="file" id="avatarUpload" accept="image/*" hidden />
+
+            <label for="avatarUpload" class="upload-btn">
+              <img
+                src="assets/images/upload-icon.png"
+                alt="upload"
+                class="upload-icon"
+              />
+              Upload Image
+            </label>
+
+            <p id="uploadStatus" class="upload-status"></p>
+
+            <figcaption>Ambrose Ojimba</figcaption>
+          </figure>
+
+          <p data-testid="test-user-bio">
+            A dedicated Web Developer continuously learning, building projects
+            that enhance real-world digital experiences. Turning concepts into
+            code and designs into experiences, one pixel and one function at a
+            time... <br />
+            <a
+              href="https://mail.google.com/mail"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="test-user-social-email"
+            >
+              <img
+                data-testid="test-user-email-icon"
+                src="assets/images/mail.png"
+              />
+              Emekaojimba10@gmail.com
+            </a>
+          </p>
+        </div>
+
+        <p>Current time (ms): <span data-testid="test-user-time">0</span></p>
+
+        <nav aria-label="Social links" data-testid="test-user-social-links">
+          <ul>
+            <li>
+              <a
+                href="https://x.com/iamambrose_"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-twitter"
+                >Twitter</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/Ambrose-oj?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-github"
+                >GitHub</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/ambrose-ojimba-220500344/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="test-user-social-linkedin"
+                >LinkedIn</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <section>
+          <h2>Hobbies</h2>
+          <ul data-testid="test-user-hobbies">
+            <li>Coding</li>
+            <li>Playing Football</li>
+            <li>Swimming</li>
+            <li>Listening to Music</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Dislikes</h2>
+          <ul data-testid="test-user-dislikes">
+            <li>Procrastination</li>
+            <li>Noisy Work-Space</li>
+            <li>Okra Soup</li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
