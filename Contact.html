@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me - HNG</title>
+    <link rel="stylesheet" href="Contact.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="page-header">
+      <nav class="main-nav">
+        <a href="/index.html" class="back-link">
+          <i class="fa-solid fa-arrow-left"></i>
+           Back to Home
+        </a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="hero-section">
+        <div class="hero-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h1 class="hero-title">
+          Let's Work
+          <span class="gradient-text">Together</span>
+          <!-- <i class="fas fa-sparkles sparkle-icon"></i> -->
+        </h1>
+        <p class="hero-description">
+          Ready to bring your ideas to life? I'm here to help you build amazing
+          web experiences that make a difference. Let's create something
+          extraordinary together.
+        </p>
+      </div>
+
+      <div class="main-grid">
+        <div class="form-section">
+          <div class="form-card">
+            <div class="form-header">
+              <h2>Send Me a Message</h2>
+              <p>
+                I'd love to hear about your project. Let's discuss how we can
+                work together.
+              </p>
+            </div>
+
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" 
+                         id="name" 
+                         data-testid="test-contact-name"
+                         name="name" 
+                         required />
+
+                    <div
+                        class="error-msg"
+                        data-testid="test-contact-error-name"
+                        aria-live="polite"
+                    ></div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" 
+                         id="email" 
+                         data-testid="test-contact-email"
+                         name="email" 
+                         required 
+                         aria-describedby="error-email"/>
+
+                <div
+                   id="error-email"
+                   class="error-msg"
+                   data-testid="test-contact-error-email"
+                   aria-live="polite"
+                ></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" 
+                       id="subject" 
+                       data-testid="test-contact-subject"
+                       name="subject" 
+                       required />
+
+                <div
+                   class="error-msg"
+                   data-testid="test-contact-error-subject"
+                   aria-live="polite"
+                ></div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  data-testid="test-contact-message"
+                  name="message"
+                  rows="6"
+                  required
+                  minlength="10"
+                  aria-describedby="error-message"
+                ></textarea>
+
+                <div
+                  id="error-message"
+                  class="error-msg"
+                  data-testid="test-contact-error-message"
+                  aria-live="polite"
+                ></div>
+              </div>
+
+              <button type="submit" 
+                      data-testid="test-contact-submit"
+                      class="submit-btn">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+
+            <div
+               id="success-msg"
+               data-testid="test-contact-success"
+               aria-live="polite"
+            ></div>
+            </form>
+          </div>
+        </div>
+
+        <script src="Contact.js"></script>
+  </body>
+</html>
+
+

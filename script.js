@@ -1,4 +1,3 @@
-// show Date.now() in milliseconds when page loads
 const timeEl = document.querySelector('[data-testid="test-user-time"]');
 function updateTime() {
   timeEl.textContent = Date.now();
@@ -13,7 +12,6 @@ function setAvatarFromUrl(url) {
   avatarImg.alt = 'Profile image';
 }
 
-
 const uploadInput = document.getElementById('avatarUpload');
 const uploadStatus = document.getElementById('uploadStatus');
 
@@ -27,8 +25,6 @@ uploadInput.addEventListener('change', (event) => {
   //   uploadStatus.textContent = '';
   // }
 });
-
-
 
 // To support file upload (reads as data URL and sets img.src)
 function setAvatarFromFile(file) {

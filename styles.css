@@ -12,8 +12,6 @@ body {
   background-color: #c5cac9;
   color: #0a0a0a;
   line-height: 1.6;
-
-  /* Center the card on the page */
   display: grid;
   place-items: center;
   min-height: 100vh;
@@ -59,7 +57,6 @@ a:hover {
   transform: translateY(-5px);
 }
 
-
 .profile-card header {
   width: 100%;
   text-align: center;
@@ -73,10 +70,85 @@ a:hover {
   letter-spacing: 1px;
 }
 
-
 .profile-card figcaption {
   display: none;
 }
+
+/* Profile card testing for responsiveness and image upload */
+
+.profile-card [data-testid="test-user-header-flex"] {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.profile-card [data-testid="test-user-avatar"] {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-block-start: calc(-1 * 0.5rem);
+  justify-self: center;
+}
+
+.profile-card [data-testid="test-user-email-icon"] {
+  display: inline;
+  width: 1rem;
+  height: 1rem;
+}
+
+.profile-card [data-testid="test-user-social-email"] {
+  display: flex;
+  gap: .3rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: .5rem;
+}
+
+.upload-btn {
+  align-items: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #82adee,  #007bff);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  margin-top: .5rem;
+}
+
+.upload-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.upload-btn:hover {
+  background: linear-gradient(135deg, #0056d6, #0040a8);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.upload-btn:active {
+  transform: scale(0.97);
+}
+
+.upload-status {
+  font-size: 13px;
+  color: #555;
+  margin-top: 8px;
+  font-style: italic;
+  justify-self: center;
+}
+
 
 /* Bio */
 .profile-card [data-testid="test-user-bio"] {
@@ -166,89 +238,42 @@ a:hover {
   font-weight: 500;
 }
 
-
-/* Profile card testing for responsiveness and image upload */
-
-.profile-card [data-testid="test-user-header-flex"] {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: center;
+.page-nav {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.profile-card [data-testid="test-user-avatar"] {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #ffffff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-block-start: calc(-1 * 0.5rem);
-  justify-self: center;
+/* .page-nav:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+} */
+
+.page-nav a {
+  font-weight: 600;
+  padding: 0.5rem;
+  position: relative;
 }
 
-.profile-card [data-testid="test-user-email-icon"] {
-  display: inline;
-  width: 1rem;
-  height: 1rem;
+.page-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.profile-card [data-testid="test-user-social-email"] {
-  display: flex;
-  gap: .3rem;
-  align-items: center;
-  justify-content: center;
-  margin-top: .5rem;
+.page-nav a:hover::after {
+  width: 100%;
 }
-
-.upload-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: linear-gradient(135deg, #82adee,  #007bff);
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-size: 10px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: none;
-  display: flex;
-  justify-self: center;
-  justify-content: center;
-  margin-top: .5rem;
-}
-
-.upload-icon {
-  width: 1rem;
-  height: 1rem;
-}
-
-.upload-btn:hover {
-  background: linear-gradient(135deg, #0056d6, #0040a8);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.upload-btn:active {
-  transform: scale(0.97);
-}
-
-.upload-status {
-  font-size: 13px;
-  color: #555;
-  margin-top: 8px;
-  font-style: italic;
-  justify-self: center;
-}
-
 
 
 /*
-
  =================  RESPONSIVENESS  =================
-
 */
 
 /* On larger screens, increase padding */
@@ -268,7 +293,6 @@ a:hover {
 
 @media (max-width: 768px) {
   .profile-card {
-    /* background: #007bff; */
     max-width: 600px;
   }
 
